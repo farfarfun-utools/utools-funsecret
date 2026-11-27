@@ -1,0 +1,59 @@
+{
+  "pluginName": "密藏随行",
+  "version": "0.1.0",
+  "description": "密藏随行 FunSecret：基于 funsecret 命令行本地管理多级分类加密密钥，支持快速搜索、按需复制与数据库同步",
+  "author": "farfarfun",
+  "main": "dist/index.html",
+  "preload": "preload.js",
+  "logo": "logo.png",
+  "pluginSetting": {
+    "height": 580
+  },
+  "features": [
+    {
+      "code": "funsecret",
+      "description": "浏览、搜索并管理本地加密密钥",
+      "explain": "浏览、搜索并管理本地加密密钥",
+      "icon": "logo.png",
+      "cmds": ["密藏随行", "FunSecret", "funsecret", "密钥管理", "本地密钥"]
+    },
+    {
+      "code": "search-secret",
+      "description": "搜索密钥分类路径并直接复制值",
+      "explain": "搜索密钥分类路径并直接复制值",
+      "icon": "search.png",
+      "cmds": [
+        {
+          "type": "over",
+          "label": "搜索密钥并复制",
+          "minLength": 1,
+          "maxLength": 60
+        }
+      ],
+      "mainPush": true
+    },
+    {
+      "code": "add-secret",
+      "description": "向本地 funsecret 写入新密钥",
+      "explain": "向本地 funsecret 写入新密钥",
+      "icon": "logo.png",
+      "cmds": ["写入密钥", "新增密钥", "funsecret write"]
+    }
+  ],
+  "platform": ["darwin", "win32", "linux"],
+  "tools": {
+    "list_secret_paths": {
+      "description": "列出 FunSecret 中已保存密钥的分类路径与更新时间，绝不返回密钥明文值。",
+      "inputSchema": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "keyword": {
+            "type": "string",
+            "description": "可选，只匹配分类路径片段；最多返回 50 条"
+          }
+        }
+      }
+    }
+  }
+}

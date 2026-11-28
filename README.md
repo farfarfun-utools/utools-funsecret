@@ -18,7 +18,7 @@
 
 ## 核心特性
 
-- **底层调用 `funsecret` CLI**：全部读写、Fernet 加密与跨库同步均由本机 `funsecret` 命令完成（推荐 `funsecret >= 2.0.1`，可通过 `pip install -U funsecret`、`cargo install funsecret` 或 GitHub Release 获取）。
+- **底层调用 `funsecret` CLI**：全部读写、Fernet 加密与跨库同步均由本机原生 Rust `funsecret` 命令完成（推荐 `funsecret >= 2.1.0`，可通过 `apt`、`brew`、`cargo install funsecret` 或 GitHub Release 获取）。
 - **分类树浏览与实时搜索**：按 2–5 级分类路径展示（如 `openai / prod / api_key`），列表视图默认不读取也不显示任何密钥明文。
 - **按需读取与安全复制**：点击或回车才调用 `funsecret read`；支持剪贴板自动清空倒计时（默认 30 秒）与临时明文查看自动隐藏（默认 15 秒）。
 - **安全写入与单条删除**：通过 `write --stdin` 安全传递多行或 `-` 开头的密钥值，不进入命令行参数；支持可选 TTL 过期时间与 `delete` 单条删除。
